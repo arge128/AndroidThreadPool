@@ -17,7 +17,7 @@ import java.util.concurrent.TimeoutException;
  */
 
 public enum ThreadPoolManager implements ExecutorService {
-    INSTANCE;
+    POOL;
     private ExecutorSupplier executorSupplier;
 
     ThreadPoolManager() {

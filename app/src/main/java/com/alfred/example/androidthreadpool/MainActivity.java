@@ -31,17 +31,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.background_btn:
-                ThreadPoolManager.INSTANCE.execute(backRunnable, Priority.BACKGROUND);
+                ThreadPoolManager.POOL.execute(backRunnable, Priority.BACKGROUND);
                 break;
             case R.id.foreground_btn:
-                ThreadPoolManager.INSTANCE.execute(foreRunnable, Priority.NORMAL);
+                ThreadPoolManager.POOL.execute(foreRunnable, Priority.NORMAL);
                 break;
             case R.id.serial_btn:
-                ThreadPoolManager.INSTANCE.executeSerial(serialRunnable1);
-                ThreadPoolManager.INSTANCE.executeSerial(serialRunnable2);
+                ThreadPoolManager.POOL.executeSerial(serialRunnable1);
+                ThreadPoolManager.POOL.executeSerial(serialRunnable2);
                 break;
             case R.id.main_thread_btn:
-                ThreadPoolManager.INSTANCE.executeOnMainThread(mainRunnable);
+                ThreadPoolManager.POOL.executeOnMainThread(mainRunnable);
                 break;
         }
     }
